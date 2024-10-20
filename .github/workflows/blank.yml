@@ -26,7 +26,7 @@ jobs:
             npm: 6
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: cloudposse/github-action-matrix-extended@0.2.0
+      - uses: actions/setup
         with:
           node-version: ${{ matrix.node }}
       - if: ${{ matrix.npm }}
