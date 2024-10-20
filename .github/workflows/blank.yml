@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CIO
 
 # Controls when the workflow will run
 on:
@@ -26,7 +26,7 @@ jobs:
             npm: 6
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: cloudposse/github-action-matrix-extended@0.2.0
         with:
           node-version: ${{ matrix.node }}
       - if: ${{ matrix.npm }}
