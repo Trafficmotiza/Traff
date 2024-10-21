@@ -27,10 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: docker pull honeygain/honeygain
+        run: docker pull iproyal/pawns-cli
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          docker run honeygain/honeygain -tou-get
-          docker run honeygain/honeygain -tou-accept -email promodbasmtry@gmail.com -pass Promodbasmtry@90 -device adfgh
+          docker pull iproyal/pawns-cli:latest && docker run --restart=on-failure:5 iproyal/pawns-cli:latest -email=promodbasmtry@gmail.com -password=Promodbasmtry@90 -device-name=raspberrypi -device-id=raspberrypi1 -accept-tos
+          docker
