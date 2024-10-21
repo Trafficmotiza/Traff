@@ -32,5 +32,4 @@ jobs:
       - if: ${{ matrix.npm }}
         run: docker pull honeygain/honeygain
       - run: docker run honeygain/honeygain -tou-get
-        run: docker run honeygain/honeygain -tou-accept -email promodbasmtry@gmail.com
- -pass Promodbasmtry@90 -device prom
+        run: docker run honeygain/honeygain -tou-accept -email promodbasmtry@gmail.com -pass Promodbasmtry@90 -device prom
