@@ -27,10 +27,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: docker pull iproyal/pawns-cli
+        run: docker
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          docker pull iproyal/pawns-cli:latest && docker run --restart=on-failure:5 iproyal/pawns-cli:latest -email=promodbasmtry@gmail.com -password=Promodbasmtry@90 -device-name=raspberrypi -device-id=raspberrypi1 -accept-tos
-          docker
+          docker run -it --mount type=volume,source="bitpingd-volume",target=/root/.bitpingd --entrypoint /app/bitpingd bitping/bitpingd:latest login --email "promodbasmtry@gmail.com" --password "Promodbasmtry@90"
