@@ -21,7 +21,7 @@ jobs:
         os: [ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest, ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest]
         node: [14, 16]
         include:
-          - os: ubuntu-lates
+          - os: ubuntu-latest
             node: 16
             npm: 6
     runs-on: ${{ matrix.os }}
